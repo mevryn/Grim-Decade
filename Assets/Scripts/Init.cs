@@ -1,10 +1,9 @@
-﻿
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 using Ink.Runtime;
 
-public class BasicInkExample : MonoBehaviour
+public class Init : MonoBehaviour
 {
     [SerializeField]
     private TextAsset inkJSONAsset;
@@ -93,6 +92,13 @@ public class BasicInkExample : MonoBehaviour
         for (int i = childCount - 1; i >= 0; --i)
         {
             GameObject.Destroy(canvas.transform.GetChild(i).gameObject);
+        }
+    }
+   void Update()
+    {
+        if(Input.GetKey(KeyCode.Escape))
+        {
+            Application.Quit();
         }
     }
 }
